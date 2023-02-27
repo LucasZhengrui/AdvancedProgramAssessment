@@ -11,4 +11,6 @@ def indexdb():
     tag.execute("select * from table_example")
     rows = tag.fetchall()
     connection.close()
-    return render_template('mainpage.html', rows = rows)
+    return render_template('mainpage.html', rows = rows)\
+
+# command
