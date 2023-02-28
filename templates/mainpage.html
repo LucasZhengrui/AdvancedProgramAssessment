@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>
+        Database
+    </title>
+</head>
+<body>
+    <h1>
+        Here is the Database.
+    </h1>
+    {% for row in rows %}
+    <p>
+        Country table:
+        <b>
+            {{row['id']}}
+        </b> | {{row['country_name']}} | {{row['city_name']}}
+    </p>
+    {% endfor %}
+</body>
+</html>    
