@@ -8,19 +8,19 @@ curs = connection.cursor()
 # Deleted and created country table
 connection.execute('drop table if exists country')
 print("Exist tables deleted successfully!")
-connection.execute('create table country (id integer PRIMARY KEY, country_name text, city_name text)')
+connection.execute('create table country (id integer PRIMARY KEY, country_name text)')
 print("Table country created successfully!")
 
 # Deleted and created city table
 connection.execute('drop table if exists city')
 print("Exist tables deleted successfully!")
-connection.execute('create table city (id integer REFERENCES country(id), gender text, ethnicity_name text)')
+connection.execute('create table city (id integer REFERENCES country(id), city_name text)')
 print("Table country created successfully!")
 
 # Deleted and created animal table
 connection.execute('drop table if exists animal')
 print("Exist tables deleted successfully!")
-connection.execute('create table animal (id integer REFERENCES country(id), animal_type text, animals text)')
+connection.execute('create table animal (id integer REFERENCES country(id), animal_type text, animals text, gender text, ethnicity_name text)')
 print("Table country created successfully!")
 
 # Deleted and created animal table
@@ -49,11 +49,11 @@ with open('data.csv', newline='') as d:
         last_updated_date = row[9]
 
         # inserted the data to country table
-        curs.execute('INSERT INTO country VALUES (?, ?, ?)', (id, country_name, city_name))
+        curs.execute('INSERT INTO country VALUES (?, ?)',(id, country_name))
         # inserted the data to city table
-        curs.execute('INSERT INTO city VALUES (?, ?, ?)',(id, gender, ethnicity_name))
+        curs.execute('INSERT INTO city VALUES (?, ?)',(id, city_name))
         # inserted the data to animal table
-        curs.execute('INSERT INTO animal VALUES (?, ?, ?)',(id, animal_type, animals))
+        curs.execute('INSERT INTO animal VALUES (?, ?, ?, ?, ?)',(id, animal_type, animals, gender, ethnicity_name))
         # inserted the data to humans table
         curs.execute('INSERT INTO humans VALUES (?, ?, ?, ?)',(id, humans, is_required, last_updated_date))
         connection.commit()
