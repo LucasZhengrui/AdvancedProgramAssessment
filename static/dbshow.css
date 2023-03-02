@@ -1,0 +1,17 @@
+.tableshow{
+    border: solid black;
+    height: 500px;
+    width: 1000px;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
+.table{
+    display:flex;
+    justify-content:center;
+    position: static;
+}
+
+.text{
+    text-align: center;
+}

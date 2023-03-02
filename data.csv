@@ -1,4 +1,4 @@
-id,country,city,gender,ethnicity,animal_type,animals,humans,is_required,last_updated_date
+id,country,city,gender,ethnicity,animal_type,animals,human,is_required,last_updated_date
 1,China,Nuoxizhi,Male,Tongan,elephant,1733,9988566,0,2016-01-19
 2,China,Tanbuqiao,Female,White,dog,403,4367849,0,2016-03-29
 3,United States,El Paso,Male,Cuban,dog,6193,2939235,0,2016-03-20

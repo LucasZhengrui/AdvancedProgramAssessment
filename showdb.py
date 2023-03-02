@@ -8,7 +8,7 @@ def index():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     curs = connection.cursor()
-    curs.execute("select * from country, city where (city.id = country.id and country.id <= 30 and country.country_name = 'China')")
+    curs.execute("select * from country, city, animal where (city.id = animal.id and animal.id = country.id and city.id = country.id and country.id <= 200 and country.country_name = 'China' and animal.gender='Male')")
     rows_ = curs.fetchall()
     connection.close()
     return render_template('mainpage.html', rows = rows_)
