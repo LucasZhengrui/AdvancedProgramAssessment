@@ -1,4 +1,4 @@
-# AdvancedProgramAssessment
+# Advanced Program Assessment
 
 ## Welcome!
 
