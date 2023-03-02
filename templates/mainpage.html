@@ -1,20 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <link rel="stylesheet" href="dbshow.css">
+    <meta charset="utf-8">
     <title>
-        Database
+        Human-Animal Database
     </title>
 </head>
-<body>
+<body class="tableshow">
     <h1>
-        Here is the Database.
+        Here is the Human-Animal Database.
     </h1>
-    {% for row in rows %}
-    <p>
-        Country table:
-        <b>
-            {{row['id']}}
-        </b> | {{row['country_name']}}
-    </p>
-    {% endfor %}
+    <div>
+        <!-- <h3>
+            Country table:
+        </h3> -->
+        {% for row in rows %}
+        <h3>
+            <b>
+                {{row['id']}}
+            </b> | {{row['country_name']}} | {{row['city_name']}}
+        </h3>
+        {% endfor %}
+    </div>
 </body>
 </html>    
