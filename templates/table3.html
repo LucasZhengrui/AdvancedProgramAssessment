@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static\dbshow.css">
+    <meta charset="utf-8">
+    <title>
+        Animalpedia
+    </title>
+</head>
+<body>
+    <h1 class="text">
+        All kinds of animal's detail in Brazil
+    </h1>
+    <div class="table">
+        <div class="tableshow">
+            <table class="tb">
+                <tr class="tb">
+                    <th class="tb">id</th>
+                    <th class="tb">Country_name</th>
+                    <th class="tb">Animals</th>
+                    <th class="tb">Animal_type</th>
+                    <th class="tb">Gender</th>
+                    <th class="tb">Ethnicity_name</th>
+                </tr>
+                {% for row in rows %}
+                <tr class="tb">
+                    <td class="tb">
+                        {{row['id']}}
+                    </td>
+                    <td class="tb">
+                        {{row['country_name']}}
+                    </td>
+                    <td class="tb">
+                        {{row['animals']}}
+                    </td>
+                    <td class="tb">
+                        {{row['animal_type']}}
+                    </td>
+                    <td class="tb">
+                        {{row['gender']}}
+                    </td>
+                    <td class="tb">
+                        {{row['ethnicity_name']}}
+                    </td>
+                <tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>    

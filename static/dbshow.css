@@ -1,7 +1,7 @@
 .tableshow{
     border: solid black;
     height: 500px;
-    width: 1000px;
+    width: 600px;
     overflow: auto;
     flex-wrap: wrap;
 }
@@ -13,5 +13,11 @@
 }
 
 .text{
+    text-align: center;
+}
+
+.tb{
+    border:1px solid black;
+    width:100%;
     text-align: center;
 }
