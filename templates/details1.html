@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1 class="text">
-        All kinds of animal's detail in China
+        China's human details
     </h1>
     <div class="table">
         <div class="tableshow">
@@ -18,10 +18,7 @@
                     <th class="tb">id</th>
                     <th class="tb">Country_name</th>
                     <th class="tb">City_name</th>
-                    <th class="tb">Animals</th>
-                    <th class="tb">Animal_type</th>
-                    <th class="tb">Gender</th>
-                    <th class="tb">Ethnicity_name</th>
+                    <th class="tb">human</th>
                 </tr>
                 {% for row in rows %}
                 <tr class="tb">
@@ -29,24 +26,13 @@
                         {{row['id']}}
                     </td>
                     <td class="tb">
-                        <a href="details1">
-                            {{row['country_name']}}
-                        </a>
+                        {{row['country_name']}}
                     </td>
                     <td class="tb">
                         {{row['city_name']}}
                     </td>
                     <td class="tb">
-                        {{row['animals']}}
-                    </td>
-                    <td class="tb">
-                        {{row['animal_type']}}
-                    </td>
-                    <td class="tb">
-                        {{row['gender']}}
-                    </td>
-                    <td class="tb">
-                        {{row['ethnicity_name']}}
+                        {{row['human']}}
                     </td>
                 <tr>
                 {% endfor %}
