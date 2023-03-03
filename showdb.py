@@ -12,7 +12,7 @@ def table1():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     curs = connection.cursor()
-    curs.execute("select * from country, animal where (animal.id = country.id and country.country_name = 'China')")
+    curs.execute("select * from country, animal, city where (animal.id = country.id and city.id = country.id and city.id = animal.id and country.country_name = 'China')")
     rows_ = curs.fetchall()
     connection.close()
     return render_template('table1.html', rows = rows_)
@@ -22,7 +22,7 @@ def table2():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     curs = connection.cursor()
-    curs.execute("select * from country, animal where (animal.id = country.id and country.country_name = 'United States')")
+    curs.execute("select * from country, animal, city where (animal.id = country.id and city.id = country.id and city.id = animal.id and country.country_name = 'United States')")
     rows_ = curs.fetchall()
     connection.close()
     return render_template('table2.html', rows = rows_)
@@ -32,7 +32,7 @@ def table3():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     curs = connection.cursor()
-    curs.execute("select * from country, animal where (animal.id = country.id and country.country_name = 'Brazil')")
+    curs.execute("select * from country, animal, city where (animal.id = country.id and city.id = country.id and city.id = animal.id and country.country_name = 'Brazil')")
     rows_ = curs.fetchall()
     connection.close()
     return render_template('table3.html', rows = rows_)
@@ -42,7 +42,7 @@ def table4():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     curs = connection.cursor()
-    curs.execute("select * from country, animal where (animal.id = country.id and country.country_name = 'Canada')")
+    curs.execute("select * from country, animal, city where (animal.id = country.id and city.id = country.id and city.id = animal.id and country.country_name = 'Canada')")
     rows_ = curs.fetchall()
     connection.close()
     return render_template('table4.html', rows = rows_)
