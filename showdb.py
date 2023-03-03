@@ -1,13 +1,13 @@
 import sqlite3
 from flask import Flask, render_template
 
-dbcsv = Flask(__name__)
+app = Flask(__name__)
 
-@dbcsv.route('/')
+@app.route('/')
 def index():
     return render_template('mainpage.html')
 
-@dbcsv.route('/table1')
+@app.route('/table1')
 def table1():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -17,7 +17,7 @@ def table1():
     connection.close()
     return render_template('table1.html', rows = rows_)
 
-@dbcsv.route('/details1')
+@app.route('/details1')
 def table1_details():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -27,7 +27,7 @@ def table1_details():
     connection.close()
     return render_template('details1.html', rows = rows_)
 
-@dbcsv.route('/table2')
+@app.route('/table2')
 def table2():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -37,7 +37,7 @@ def table2():
     connection.close()
     return render_template('table2.html', rows = rows_)
 
-@dbcsv.route('/details2')
+@app.route('/details2')
 def table2_details():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -47,7 +47,7 @@ def table2_details():
     connection.close()
     return render_template('details2.html', rows = rows_)
 
-@dbcsv.route('/table3')
+@app.route('/table3')
 def table3():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -57,7 +57,7 @@ def table3():
     connection.close()
     return render_template('table3.html', rows = rows_)
 
-@dbcsv.route('/details3')
+@app.route('/details3')
 def table3_details():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -67,7 +67,7 @@ def table3_details():
     connection.close()
     return render_template('details3.html', rows = rows_)
 
-@dbcsv.route('/table4')
+@app.route('/table4')
 def table4():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -77,7 +77,7 @@ def table4():
     connection.close()
     return render_template('table4.html', rows = rows_)
 
-@dbcsv.route('/details4')
+@app.route('/details4')
 def table4_details():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
@@ -88,7 +88,7 @@ def table4_details():
     return render_template('details4.html', rows = rows_)
 
 if __name__ == '__main__':
-    dbcsv.run(debug=True)
+    app.run(debug=True)
 
 # curs.execute("select * from city")
 # curs.execute("select * from animal")
