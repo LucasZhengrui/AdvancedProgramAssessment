@@ -5,7 +5,7 @@ def nav(content):
     """
     Navigate to main page
     """
-    content.browser.get('http://127.0.0.1:5000')
+    content.browser.get('https://human-animal-b0nh.onrender.com/')
 
 @when(u'I click the Chinese Animal link to table1 details')
 def click(content):
@@ -20,5 +20,5 @@ def details(content):
     Successful, can visit data
     """
     print(content.browser.page_source)
-    assert content.browser.current_url == "http://127.0.0.1:5000/table1"
+    assert content.browser.current_url == "https://human-animal-b0nh.onrender.com/table1"
     assert '1 China 1733 elephant Male Tongan' in content.browser.page_source
